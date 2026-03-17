@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   
+    <!-- GOOGLE ARAMA AYARLARI -->
+    <title>Kahramanmaraş Andırın Gece Dönercisi | İskender & Döner</title>
+    <meta name="description" content="Andırın'ın en iyi gece dönercisi. Gerçek et döner, tavuk döner ve efsane İskender. Çalışma saatleri: 11:00 - 00:00. Hemen ara: 0530 285 56 39">
+    <meta name="keywords" content="Andırın döner, Kahramanmaraş İskender, gece dönercisi, Andırın yemek, Döner House, 05302855639">
+   
+    <style>
+        /* GENEL AYARLAR */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #111;
+            color: white;
+            text-align: center;
+        }
+
+        /* HEADER & LOGO */
+        header {
+            background-color: #000;
+            padding: 20px;
+            border-bottom: 4px solid #ff3300;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .logo-img {
+            max-width: 220px;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+            background: #fff;
+            padding: 5px;
+        }
+
+        .site-baslik {
+            font-size: 22px;
+            color: #fff;
+            margin-top: 15px;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .konum-yazi {
+            color: #ff9900;
+            font-size: 16px;
+            margin-top: 5px;
+            font-weight: 600;
+        }
+
+        /* ANA GÖRSEL (HERO) */
+        .hero {
+            background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1633321769407-af3c4f92e6b7?q=80&w=1920&auto=format&fit=crop');
+            background-size: cover;
+            background-position: center;
+            background-color: #222;
+            padding: 80px 20px;
+        }
+
+        .hero h1 {
+            font-size: 42px;
+            color: #ff3300;
+            margin-bottom: 15px;
+            text-shadow: 2px 2px 4px #000;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 20px;
+            color: #eee;
+            max-width: 700px;
+            margin: 0 auto 30px auto;
+        }
+
+        .btn-ara {
+            background-color: #25d366;
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            font-size: 22px;
+            font-weight: bold;
+            border-radius: 50px;
+            display: inline-block;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
+            transition: transform 0.2s;
+        }
+
+        .btn-ara:hover {
+            transform: scale(1.05);
+            background-color: #20bd5a;
+        }
+
+        /* MENÜ BÖLÜMÜ */
+        .menu-section {
+            padding: 60px 20px;
+            background-color: #1a1a1a;
+        }
+
+        .section-title {
+            font-size: 32px;
+            color: #ff9900;
+            margin-bottom: 40px;
+            text-transform: uppercase;
+            border-bottom: 2px solid #ff3300;
+            display: inline-block;
+            padding-bottom: 10px;
+        }
+
+        .grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .card {
+            background-color: #252525;
+            border: 1px solid #444;
+            border-radius: 15px;
+            width: 350px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.5);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #ff9900;
+        }
+
+        .card img {
+            width: 100%;
+            height: 260px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .card-info {
+            padding: 25px;
+        }
+
+        .card-info h3 {
+            font-size: 26px;
+            color: #ff3300;
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+        }
+
+        .card-info p {
+            font-size: 16px;
+            color: #ccc;
+            line-height: 1.6;
+        }
+
+        /* İLETİŞİM BÖLÜMÜ */
+        .contact {
+            padding: 60px 20px;
+            background-color: #000;
+            border-top: 4px solid #ff3300;
+        }
+
+        .contact-box {
+            border: 2px solid #ff9900;
+            display: inline-block;
+            padding: 40px;
+            border-radius: 15px;
+            background: #111;
+            max-width: 600px;
+            width: 100%;
+        }
+
+        .contact h2 {
+            color: #fff;
+            font-size: 30px;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+        }
+
+        .contact-item {
+            font-size: 20px;
+            margin: 15px 0;
+            color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
+
+        .contact-item a {
+            color: #ff9900;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        /* DURUM TABELASI (AÇIK/KAPALI) */
+        .durum-tabelasi {
+            margin-top: 30px;
+            padding: 15px 30px;
+            font-weight: bold;
+            font-size: 24px;
+            border-radius: 8px;
+            display: inline-block;
+            text-transform: uppercase;
+            box-shadow: 0 0 20px rgba(0,0,0,0.5);
+        }
+
+        .acik {
+            background-color: #00cc00;
+            color: white;
+            box-shadow: 0 0 20px #00cc00;
+            animation: yanipson 1.5s infinite;
+        }
+
+        .kapali {
+            background-color: #cc0000;
+            color: white;
+            box-shadow: 0 0 20px #cc0000;
+        }
+
+        @keyframes yanipson {
+            0% { opacity: 1; }
+            50% { opacity: 0.6; }
+            100% { opacity: 1; }
+        }
+
+        footer {
+            padding: 20px;
+            background: #000;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #333;
+        }
+
+        /* MOBİL UYUM */
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 32px; }
+            .grid { flex-direction: column; align-items: center; }
+            .card { width: 100%; max-width: 350px; }
+            .contact-box { padding: 20px; }
+            .contact-item { font-size: 18px; flex-direction: column; gap: 5px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER & LOGO -->
+    <header>
+        <img src="logo.png" alt="Döner House Logo" class="logo-img" onerror="this.style.display='none'; document.getElementById('logo-yazi').style.display='block'">
+        <div id="logo-yazi" style="display:none; font-size:24px; font-weight:bold; color:#fff; background:#ff3300; padding:10px; border-radius:10px;">DÖNER HOUSE</div>
+       
+        <div class="site-baslik">KAHRAMANMARAŞ ANDIRIN GECE DÖNERCİSİ</div>
+        <div class="konum-yazi">📍 Andırın Merkez</div>
+    </header>
+
+    <!-- ANA BÖLÜM -->
+    <section class="hero">
+        <h1>GECE ACIKTIN MI?<br>DOĞRU ADRESTESİN</h1>
+        <p>Andırın'ın en taze eti, en lezzetli İskender'i ve çıtır tavuk döneri burada.</p>
+        <a href="tel:05302855639" class="btn-ara">📞 0530 285 56 39 - HEMEN ARA</a>
+    </section>
+
+    <!-- ÜRÜNLER (DOĞRU GÖRSELLERLE GÜNCELLENDİ) -->
+    <section class="menu-section">
+        <h2 class="section-title">LEZZETLERİMİZ</h2>
+       
+        <div class="grid">
+           
+            <!-- KART 1: İSKENDER (Gerçek İskender Fotoğrafı) -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76690b67f61?q=80&w=800&auto=format&fit=crop" alt="Özel İskender">
+                <div class="card-info">
+                    <h3>ÖZEL İSKENDER</h3>
+                    <p>İnce dilimlenmiş dana eti, çıtır pide, yoğurdu ve masada dökülen kızgın tereyağı. Andırın usulü özel lezzet.</p>
+                </div>
+            </div>
+
+            <!-- KART 2: ET DÖNER (Gerçek Et Döner Fotoğrafı) -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1633321769407-af3c4f92e6b7?q=80&w=800&auto=format&fit=crop" alt="Gerçek Et Döner">
+                <div class="card-info">
+                    <h3>GERÇEK ET DÖNER</h3>
+                    <p>%100 dana eti.Baharatı yerinde, bol malzemeli dürüm seçeneği.</p>
+                </div>
+            </div>
+
+            <!-- KART 3: TAVUK DÖNER (Gerçek Tavuk Döner Fotoğrafı) -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1598515214211-89d3c73ae83b?q=80&w=800&auto=format&fit=crop" alt="Çıtır Tavuk Döner">
+                <div class="card-info">
+                    <h3>TAVUK DÖNER</h3>
+                    <p>Taze marine edilmiş tavuk göğsü. Çıtır lavaş arasında özel soslar, turşu ile servis edilir.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- İLETİŞİM -->
+    <section class="contact">
+        <div class="contact-box">
+            <h2>BİZE ULAŞIN</h2>
+           
+            <div class="contact-item">
+                📍 <span>Adres:ŞEHİT İSA TAHTA CAD. ANDIRIN MERKEZ MEZARLIĞI KARŞISI, DAL MARKET YANI, Andırın / Kahramanmaraş</span>
+            </div>
+           
+            <div class="contact-item">
+                📞 <span>Telefon:</span><br>
+                <a href="tel:05302855639">0530 285 56 39</a>
+            </div>
+           
+            <div class="contact-item">
+                ⏰ <span>Çalışma Saatleri:<br>11:00 Sabah - 00:00 Gece</span>
+            </div>
+           
+            <!-- OTOMATİK AÇIK/KAPALI YAZISI -->
+            <div id="durum-gosterge" class="durum-tabelasi">Yükleniyor...</div>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2024 Kahramanmaraş Andırın Gece Dönercisi. Tüm hakları saklıdır.
+    </footer>
+
+    <script>
+        // SAAT KONTROL SİSTEMİ (11:00 - 00:00)
+        function kontrolEt() {
+            const simdi = new Date();
+            const saat = simdi.getHours();
+           
+            let acikMi = false;
+
+            if (saat >= 11 && saat < 24) {
+                acikMi = true;
+            }
+
+            const gosterge = document.getElementById('durum-gosterge');
+           
+            if (acikMi) {
+                gosterge.className = 'durum-tabelasi acik';
+                gosterge.innerHTML = '🟢 ŞU AN AÇIĞIZ - HOŞ GELDİNİZ';
+            } else {
+                gosterge.className = 'durum-tabelasi kapali';
+                gosterge.innerHTML = '🔴 ŞU AN KAPALIYIZ<br><span style="font-size:16px; font-weight:normal">(11:00\'de açılacağız)</span>';
+            }
+        }
+
+        window.onload = kontrolEt;
+    </script>
+
+</body>
+</html>
